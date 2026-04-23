@@ -13,25 +13,31 @@ const sarees: Saree[] = [
     id: 1,
     name: "Banarasi Silk Saree",
     price: 2499,
-    image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=800&q=80",
+    image: "sarees/1.jpg",
   },
   {
     id: 2,
     name: "Cotton Handloom Saree",
     price: 1799,
-    image: "https://images.unsplash.com/photo-1623073491323-2c5f6e8e7a4b?auto=format&fit=crop&w=800&q=80",
+    image: "sarees/2.jpg",
   },
   {
     id: 3,
     name: "Georgette Saree",
     price: 2199,
-    image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=800&q=80",
+    image: "sarees/3.jpg",
   },
   {
     id: 4,
     name: "Kanjivaram Silk Saree",
     price: 3999,
-    image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=800&q=80",
+    image: "sarees/4.jpg",
+  },
+  {
+    id: 5,
+    name: "Kanjivaram Silk Saree",
+    price: 3999,
+    image: "sarees/5.jpg",
   },
 ];
 
@@ -53,19 +59,8 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Side Mini Banners + Products */}
+      {/* Product Grid */}
       <section style={styles.contentRow}>
-        {/* Left Mini Banner */}
-        <div style={styles.sideBanner}>
-          <img
-            src="https://images.unsplash.com/photo-1618221710640-c6c8f0d9d7e5?auto=format&fit=crop&w=600&q=80"
-            alt="Handloom Story"
-            style={styles.sideImage}
-          />
-          <div style={styles.sideText}>Handloom Stories</div>
-        </div>
-
-        {/* Product Grid */}
         <div style={styles.grid}>
           {sarees.map((s) => (
             <div key={s.id} style={styles.card}>
@@ -76,16 +71,6 @@ const App: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Right Mini Banner */}
-        <div style={styles.sideBanner}>
-          <img
-            src="https://images.unsplash.com/photo-1594737625785-cfc6b4c9a3d6?auto=format&fit=crop&w=600&q=80"
-            alt="Crafted Elegance"
-            style={styles.sideImage}
-          />
-          <div style={styles.sideText}>Crafted Elegance</div>
         </div>
       </section>
     </div>
@@ -141,9 +126,6 @@ const styles: Record<string, React.CSSProperties> = {
     color: "#444",
   },
   contentRow: {
-    display: "grid",
-    gridTemplateColumns: "240px 1fr 240px",
-    gap: "32px",
     padding: "48px 24px",
   },
   sideBanner: {
